@@ -6,27 +6,17 @@ import (
 	"../datafile"
 	)
 func main(){
-        lines, err := datafile.GetStrings("votes.txt")
+        lines, err := datafile.GetStrings("vote.txt")
         if err != nil {
-        log.Fatal(err)
+     	   log.Fatal(err)
       }
-      var names []string
-      var counts []int
-      for _, line := range lines {
-	      matched := false
-	      for i, name := rand names{
-		      if name == line{
-			      count[i]++
-			      matched = true
-		      }
-	      }
-	      if matched == false {
-		      names = append(namesm line)
-		      counts = append(count, 1)
-	      }     
-	}
-	for i,name := range names{
-		fmt.Printf("%s: %d\n", name,counts[i])
-	}
-}
-										~                                                                                        ~                                                                                        ~                                                                                        ~                            
+      var counts map[string]int
+      counts = make(map[string]int)
+      for _, line := range lines{
+	      counts[line]++
+      }
+      for name, count := range counts{
+	      fmt.Printf("Votes for %s : %d\n", name, count)
+      }
+
+}                                                                                   ~                                                                                        ~                                                                                        ~                            
