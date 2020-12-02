@@ -2,20 +2,19 @@ package main
 
 import "fmt"
 
-type subscriber struct {
-	name string
-	rate int
-	active bool
-}
-func main(){
-	var s1 subscriber
-
-	s1.name = "kim"
-	s1.rate = 5000
-	s1.active = false
-
-	fmt.Printf("%s\n",s1.name)
-	fmt.Println(s1.rate)
-	fmt.Println(s1.active)
+type part struct {
+	description string
+	count       int
 }
 
+func showinfo(p part) {
+	fmt.Println("Description : ", p.description)
+	fmt.Println("Count : ", p.count)
+}
+func main() {
+	var bolts part
+	bolts.description = "Hex bolts"
+	bolts.count = 100
+	showinfo(bolts)
+
+}
